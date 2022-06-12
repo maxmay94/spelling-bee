@@ -1,4 +1,4 @@
-let wordListFour = [
+let wordList_4 = [
   'AAHS',  
   'AALS',  
   'ABAC',  

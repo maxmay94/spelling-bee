@@ -1,4 +1,4 @@
-let wordListSeven = [  
+let wordList_7 = [  
   'AARRGHH',  
   'ABACTOR',  
   'ABALONE',  
