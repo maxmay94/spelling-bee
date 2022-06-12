@@ -31,3 +31,6 @@ fs.readFile('/Users/test/code/projects/spelling-bee/spelling-bee-front-end/files
 
   console.log(words)
 })
+
+
+// https://www.bestwordlist.com/
