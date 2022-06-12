@@ -1,4 +1,4 @@
-let wordList = [
+let wordListSeven = [
   'ABDOMEN',  
   'ABDUCES',  
   'ABDUCTS',  
