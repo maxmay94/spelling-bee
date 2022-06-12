@@ -1,6 +1,6 @@
 let fs = require('fs')
 
-fs.readFile('/Users/test/code/projects/spelling-bee/spelling-bee-front-end/files/7-letter-words-full.txt', function (err, data) {
+fs.readFile('/Users/test/code/projects/spelling-bee/spelling-bee-front-end/files/8-letter-words-full.txt', function (err, data) {
   let allWords = data.toString().split(' ')
   let words = []
 
@@ -8,18 +8,22 @@ fs.readFile('/Users/test/code/projects/spelling-bee/spelling-bee-front-end/files
     console.log(err)
   }
 
+  
   allWords.forEach(word => {
+    let chars = []
     for(let i = 0; i < word.length; i++) {
-      if(word.indexOf(word[i]) !== word.lastIndexOf(word[i])) {
-        word = ''
+      if(!chars.includes(word[i])) {
+        chars.push(word[i])
       }
     }
-    words.push(word)
+    if(chars.length <= 7) {
+      words.push(word)
+    }
   })
 
   words = words.filter(n => n).join("',  \n'")
 
-  fs.writeFile('7-letters-adjusted.txt', words, err => {
+  fs.writeFile('8-letters.txt', words, err => {
     if(err) {
       console.log(err)
     }
