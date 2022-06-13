@@ -12,18 +12,21 @@ fs.readFile('/Users/test/code/projects/spelling-bee/spelling-bee-front-end/files
     for(let i = 0; i < word.length; i++) {
       if(word.indexOf(word[i]) !== word.lastIndexOf(word[i])) {
         word = ''
+      } else {
+        word = word.split('').sort().join('')
       }
     }
-    words.push(word)
+    if(!words.includes(word) && word !== '') {
+      words.push(word)
+    }
   })
 
-  words = words.filter(n => n).join("',  \n'")
+  words = words.sort().join("',  \n'")
 
-  fs.writeFile('7-letters-adjusted.txt', words, err => {
+
+  fs.writeFile('STARTERS.txt', words, err => {
     if(err) {
       console.log(err)
     }
   })
-
-  console.log(words)
 })

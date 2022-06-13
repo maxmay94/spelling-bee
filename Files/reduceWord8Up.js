@@ -21,7 +21,7 @@ fs.readFile('/Users/test/code/projects/spelling-bee/spelling-bee-front-end/files
     }
   })
 
-  words = words.filter(n => n).join("',  \n'")
+  words = words.filter(s => s).join("',  \n'")
 
   fs.writeFile('9-letters.txt', words, err => {
     if(err) {

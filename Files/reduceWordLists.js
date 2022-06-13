@@ -6,13 +6,11 @@ fs.readFile('/Users/test/code/projects/spelling-bee/spelling-bee-front-end/files
   }
 
   let allWords = data.toString().split(' ')
-  let words = allWords.filter(n => n).join("',  \n'")
+  let words = allWords.filter(s => s).join("',  \n'")
 
   fs.writeFile('6-letters.txt', words, err => {
     if(err) {
       console.log(err)
     }
   })
-
-  console.log(words)
 })
