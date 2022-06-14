@@ -5453,3 +5453,15 @@ let wordList_4 = [
   'ZYGA',  
   'ZYME'
 ]
+
+function smallList(STARTERS) {
+  let newList = []
+  wordList_4.forEach(word => {
+    STARTERS.includes(word.split('').forEach(char => char)) && newList.push(word.join(''))
+  })
+  return newList
+}
+
+export {
+  smallList
+}

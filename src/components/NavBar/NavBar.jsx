@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 const NavBar = ({ user, handleLogout }) => {
   return (
-    <>
-      {user ?
+    <div>
+      {/* {user ?
         <nav>
           <ul>
             <li>Welcome, {user.name}</li>
@@ -19,8 +19,8 @@ const NavBar = ({ user, handleLogout }) => {
             <li><Link to="/signup">Sign Up</Link></li>
           </ul>
         </nav>
-      }
-    </>
+      } */}
+    </div>
   )
 }
 
