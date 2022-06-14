@@ -7,13 +7,15 @@ const Tile = ({letter, center}) => {
     : 'mask mask-hexagon-2 bg-gray-300 hover:bg-gray-400 w-full h-full p-10 text-center text-black'
   return (
     // <button className= 'flex'>
-    <div className='w-full h-full'>
-      <div className={background}>
-        <div className=''>
-          {center || letter}
+    <button className='w-full h-full'>
+      <div className='w-full h-full'>
+        <div className={background}>
+          <div className=''>
+            {center || letter}
+          </div>
         </div>
       </div>
-    </div>
+    </button>
     // </button>
   )
 }

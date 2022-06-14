@@ -32910,3 +32910,17 @@ let wordList_7 = [
   'ZYTHUMS',  
   'ZYZZYVA'
 ]
+
+function valid_7(STARTERS, CENTER) {
+  let newList = []
+  wordList_7.forEach(word => {
+    if(STARTERS.includes(word.split('').forEach(char => char)) && word.split('').join(' ').includes(CENTER)) {
+      newList.push(word)
+    }
+  })
+  return newList
+}
+
+export {
+  valid_7
+}

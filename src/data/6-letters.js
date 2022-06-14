@@ -22157,3 +22157,17 @@ let wordList_6 = [
   'ZYMOME',  
   'ZYTHUM'
 ]
+
+function valid_6(STARTERS, CENTER) {
+  let newList = []
+  wordList_6.forEach(word => {
+    if(STARTERS.includes(word.split('').forEach(char => char)) && word.split('').join(' ').includes(CENTER)) {
+      newList.push(word)
+    }
+  })
+  return newList
+}
+
+export {
+  valid_6
+}

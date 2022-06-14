@@ -21624,3 +21624,17 @@ let wordList_9 = [
   'ZYMOLYSIS',  
   'ZYMOMETER'
 ]
+
+function valid_9(STARTERS, CENTER) {
+  let newList = []
+  wordList_9.forEach(word => {
+    if(STARTERS.includes(word.split('').forEach(char => char)) && word.split('').join(' ').includes(CENTER)) {
+      newList.push(word)
+    }
+  })
+  return newList
+}
+
+export {
+  valid_9
+}

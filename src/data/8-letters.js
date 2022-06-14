@@ -31980,3 +31980,17 @@
   'ZYMOSANS',  
   'ZYZZYVAS'
 ]
+
+function valid_8(STARTERS, CENTER) {
+  let newList = []
+  wordList_8.forEach(word => {
+    if(STARTERS.includes(word.split('').forEach(char => char)) && word.split('').join(' ').includes(CENTER)) {
+      newList.push(word)
+    }
+  })
+  return newList
+}
+
+export {
+  valid_8
+}

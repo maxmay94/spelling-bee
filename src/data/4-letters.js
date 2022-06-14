@@ -5454,14 +5454,31 @@ let wordList_4 = [
   'ZYME'
 ]
 
-function smallList(STARTERS) {
+function valid_4(STARTERS, CENTER) {
   let newList = []
   wordList_4.forEach(word => {
-    STARTERS.includes(word.split('').forEach(char => char)) && newList.push(word.join(''))
+    let test = true
+    if(word.includes(CENTER)) {
+      console.log(word,CENTER)
+      word.split('').forEach(char => {
+        if(!STARTERS.join(' ').includes(char) || !CENTER.includes(char)) {
+          test = false
+          console.log('BAD CHAR --> ',char)
+        } else {
+          console.log('GOOD CHAR --> ', char)
+        }
+      })
+    }
+    if(test === false) {
+      newList.push(word)
+      console.log('GOOD WORD -->',word, STARTERS , CENTER)
+    } 
   })
+  console.log(':::',CENTER,STARTERS,':::')
   return newList
 }
 
+
 export {
-  smallList
+  valid_4
 }
