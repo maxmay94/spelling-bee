@@ -12479,16 +12479,6 @@ let wordList_5 = [
   'ZYMIC'
 ]
 
-function valid_5(STARTERS, CENTER) {
-  let newList = []
-  wordList_5.forEach(word => {
-    if(STARTERS.includes(word.split('').forEach(char => char)) && word.split('').join(' ').includes(CENTER)) {
-      newList.push(word)
-    }
-  })
-  return newList
-}
-
 export {
-  valid_5
+  wordList_5
 }

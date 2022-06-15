@@ -5454,31 +5454,30 @@ let wordList_4 = [
   'ZYME'
 ]
 
-function valid_4(STARTERS, CENTER) {
-  let newList = []
-  wordList_4.forEach(word => {
-    let test = true
-    if(word.includes(CENTER)) {
-      console.log(word,CENTER)
-      word.split('').forEach(char => {
-        if(!STARTERS.join(' ').includes(char) || !CENTER.includes(char)) {
-          test = false
-          console.log('BAD CHAR --> ',char)
-        } else {
-          console.log('GOOD CHAR --> ', char)
-        }
-      })
-    }
-    if(test === false) {
-      newList.push(word)
-      console.log('GOOD WORD -->',word, STARTERS , CENTER)
-    } 
-  })
-  console.log(':::',CENTER,STARTERS,':::')
-  return newList
-}
+// function valid_4(STARTERS, CENTER) {
+//   STARTERS.push(CENTER)
+//   let newList = []
+//   wordList_4.forEach(word => {
+//     let test = true
+//     if(word.split('').includes(CENTER)){
+//       console.log(CENTER, word)
+//       word.split('').forEach(char => {
+//         if(STARTERS.includes(char)) {
+//           console.log(word, char)
+//         } else {
+//           test = false
+//         }
+//       })
+//     } else {
+//       test = false
+//     }
+//     test && newList.push(word)
+//   })
+//   console.log(':::','center -->', CENTER , 'starters -->',STARTERS,':::')
+//   return newList
+// } 
 
 
 export {
-  valid_4
+  wordList_4
 }
