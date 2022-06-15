@@ -48,22 +48,21 @@ const GameScreen = (props) => {
 export default GameScreen
 
 
-
 function validWord(arr, center, starters) {
   let newList = []
   arr.forEach(word => {
-    let test = true
+    let wordValid = true
     if(word.split('').includes(center)){
       word.split('').forEach(char => {
         if(!starters.includes(char) && char !== center) {
-          test = false
+          wordValid = false
         }
       })
     } else {
-      test = false
+      wordValid = false
     }
-    test && newList.push(word)
+    wordValid && newList.push(word)
   })
-  // console.log(arr[1].length, newList)
+  console.log(arr[1].length, newList)
   return newList
 } 

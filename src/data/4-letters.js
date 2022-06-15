@@ -5454,29 +5454,6 @@ let wordList_4 = [
   'ZYME'
 ]
 
-// function valid_4(STARTERS, CENTER) {
-//   STARTERS.push(CENTER)
-//   let newList = []
-//   wordList_4.forEach(word => {
-//     let test = true
-//     if(word.split('').includes(CENTER)){
-//       console.log(CENTER, word)
-//       word.split('').forEach(char => {
-//         if(STARTERS.includes(char)) {
-//           console.log(word, char)
-//         } else {
-//           test = false
-//         }
-//       })
-//     } else {
-//       test = false
-//     }
-//     test && newList.push(word)
-//   })
-//   console.log(':::','center -->', CENTER , 'starters -->',STARTERS,':::')
-//   return newList
-// } 
-
 
 export {
   wordList_4
