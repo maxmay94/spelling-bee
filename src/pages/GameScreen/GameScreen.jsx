@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { getStarters } from '../../data/STARTERS'
 
+import { getStarters } from '../../data/STARTERS'
 import { wordList_4 } from '../../data/4-letters' 
 import { wordList_5 } from '../../data/5-letters'
 import { wordList_6 } from '../../data/6-letters'
@@ -36,13 +36,6 @@ const GameScreen = (props) => {
     setWords_8(validWord(wordList_8, center, starters))
     setWords_9(validWord(wordList_9, center, starters))
   }, [center, starters])
-
-  // console.log(words_4)
-  // console.log(words_5)
-  // console.log(words_6)
-  // console.log(words_7)
-  // console.log(words_8)
-  // console.log(words_9)
   
   return (
     <div className='bg-yellow-300 h-screen w-screen'>
@@ -71,5 +64,6 @@ function validWord(arr, center, starters) {
     }
     test && newList.push(word)
   })
+  // console.log(arr[1].length, newList)
   return newList
 } 
