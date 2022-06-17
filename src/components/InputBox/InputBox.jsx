@@ -8,7 +8,7 @@ const InputBox = ({guess}) => {
         type='text'
         className='rounded-3xl p-3 text-center cursor-default' 
         placeholder='make a guess'
-        value={guess}
+        defaultValue={guess}
         required
       />
     </div>

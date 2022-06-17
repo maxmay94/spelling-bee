@@ -16,7 +16,8 @@ const GameScreen = (props) => {
   let [center, setCenter] = useState('')
   let [guess, setGuess] = useState('')
   let [score, setScore] = useState(0)
-  let [maxScore, setMaxScore] = useState(0)
+  let [totalWords, setTotalWords] = useState(0)
+  let [correctGuesses, setCorrectGuesses] = useState([])
   let [words_4, setWords_4] = useState([])
   let [words_5, setWords_5] = useState([])
   let [words_6, setWords_6] = useState([])
@@ -42,14 +43,25 @@ const GameScreen = (props) => {
     setWords_9(validWord(wordList_9, center, starters))
   }, [center, starters])
 
+  useEffect(() => {
+    setTotalWords(
+      words_4.length
+      + words_5.length
+      + words_6.length
+      + words_7.length
+      + words_8.length
+      + words_9.length
+    )
+  },[words_4, words_5, words_6, words_7, words_8, words_9])
+
   const handleSubmit = () => {
     if(eval('words_' + guess.length).includes(guess)) {
-      if(guess.length === 4 ) {
+      if(guess.length === 4 && !correctGuesses.includes(guess)) {
         setScore(score + 1)
-        console.log('+1 Point!')
-      } else {
+        setCorrectGuesses([...correctGuesses, guess])
+      } else if(!correctGuesses.includes(guess)) {
         setScore(score + guess.length)
-        console.log(`+${guess.length} Points!`)
+        setCorrectGuesses([...correctGuesses, guess])
       }
     } else {
       console.log('Word Not Found....')
@@ -59,10 +71,7 @@ const GameScreen = (props) => {
 
   const handleShuffle = () => {
     setStarters(starters.sort((a, b) => 0.5 - Math.random()))
-    console.log(starters)
   }
-
-  console.log('SCORE --> ', score)
 
   return (
     <div className='bg-yellow-300 h-screen w-screen'>
@@ -79,7 +88,11 @@ const GameScreen = (props) => {
           />
         </div>
         <div className='flex-1'>
-          <StatsAndScore score={score}/>
+          <StatsAndScore 
+            score={score}
+            totalWords={totalWords}
+            correctGuesses={correctGuesses}
+          />
         </div>
       </div>
     </div>
@@ -104,6 +117,6 @@ function validWord(arr, center, starters) {
     }
     wordValid && newList.push(word)
   })
-  console.log(arr[0].length, newList)
+  // console.log(arr[0].length, newList)
   return newList
 } 
