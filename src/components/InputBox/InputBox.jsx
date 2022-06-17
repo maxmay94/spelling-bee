@@ -1,8 +1,9 @@
 import React from 'react'
 
 const InputBox = ({guess}) => {
+
   return (
-    <div className=''>
+    <div className='text-black'>
       <input 
         type='text'
         className='rounded-3xl p-3 text-center cursor-default' 

@@ -3,14 +3,15 @@ import React from 'react'
 import Tile from '../Tile/Tile'
 import InputBox from '../InputBox/InputBox'
 
-const PlayArea = ({starters, center, guess, setGuess, handleSubmit}) => {
+const PlayArea = ({starters, center, guess, setGuess, handleSubmit, handleShuffle}) => {
+
   return (
-    <div className='mx-auto mt-5 w-2/3 h-fit bg-white/[0.3] drop-shadow-xl'>
+    <div className='mx-auto mt-5 w-3/4 h-full bg-white/[0.3] drop-shadow-xl'>
       <div className=' w-full h-full'>
         <div className=''>
 
           <div className='flex'>
-            <div className='mx-auto p-5'>
+            <div className='mx-auto mt-5 p-5'>
               <InputBox guess={guess} />
             </div>
           </div>
@@ -83,14 +84,17 @@ const PlayArea = ({starters, center, guess, setGuess, handleSubmit}) => {
           </div>
         </div>
 
-        <div className='flex mx-auto mt-5 p-10 w-1/2'>
+        <div className='flex mx-auto mt-5 pt-10 px-10 pb-5 w-3/4'>
           <button 
             className='flex-1 bg-gray-100 hover:bg-gray-200 rounded-3xl text-black p-3 px-5'
             onClick={() => setGuess(guess.substring(0, guess.length - 1))}
             >
             delete
           </button>
-          <button className='flex-1 mx-10 bg-gray-100 hover:bg-gray-200 rounded-3xl text-black p-3 px-5'>
+          <button 
+            className='flex-1 mx-10 bg-gray-100 hover:bg-gray-200 rounded-3xl text-black p-3 px-5'
+            onClick={() => handleShuffle()}
+          >
             ↺
           </button>
           <button 

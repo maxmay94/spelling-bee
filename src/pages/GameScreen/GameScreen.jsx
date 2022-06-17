@@ -9,11 +9,14 @@ import { wordList_8 } from '../../data/8-letters'
 import { wordList_9 } from '../../data/9-letters'
 
 import PlayArea from '../../components/PlayArea/PlayArea'
+import StatsAndScore from '../../components/StatsAndScore/StatsAndScore'
 
 const GameScreen = (props) => {
   let [starters, setStarters] = useState([])
   let [center, setCenter] = useState('')
   let [guess, setGuess] = useState('')
+  let [score, setScore] = useState(0)
+  let [maxScore, setMaxScore] = useState(0)
   let [words_4, setWords_4] = useState([])
   let [words_5, setWords_5] = useState([])
   let [words_6, setWords_6] = useState([])
@@ -42,26 +45,43 @@ const GameScreen = (props) => {
   const handleSubmit = () => {
     if(eval('words_' + guess.length).includes(guess)) {
       if(guess.length === 4 ) {
+        setScore(score + 1)
         console.log('+1 Point!')
       } else {
+        setScore(score + guess.length)
         console.log(`+${guess.length} Points!`)
       }
     } else {
-      console.log('no dice ....')
+      console.log('Word Not Found....')
     }
     setGuess('')
   }
 
+  const handleShuffle = () => {
+    setStarters(starters.sort((a, b) => 0.5 - Math.random()))
+    console.log(starters)
+  }
+
+  console.log('SCORE --> ', score)
+
   return (
     <div className='bg-yellow-300 h-screen w-screen'>
       <h1 className='font-thin text-6xl text-center p-5 text-yellow-600 underline underline-offset-1 decoration-dotted decoration-black decoration-2'>spelling bee</h1>
-      <PlayArea 
-        starters={starters} 
-        center={center}  
-        guess={guess} 
-        setGuess={setGuess} 
-        handleSubmit={handleSubmit}
-      />
+      <div className='flex'>
+        <div className='flex-1 pl-20'>
+          <PlayArea 
+            starters={starters} 
+            center={center}  
+            guess={guess} 
+            setGuess={setGuess} 
+            handleSubmit={handleSubmit}
+            handleShuffle={handleShuffle}
+          />
+        </div>
+        <div className='flex-1'>
+          <StatsAndScore score={score}/>
+        </div>
+      </div>
     </div>
   ) 
 }
