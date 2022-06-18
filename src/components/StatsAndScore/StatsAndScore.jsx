@@ -11,13 +11,15 @@ const StatsAndScore = ({score, totalWords, correctGuesses}) => {
       <div className=''>
         {
           correctGuesses &&
-          <ul className='text-black font-light w-1/3 flex-wrap px-5'>
-            {
-              correctGuesses?.map((word, i) => (
-                <li key={i} className='flex border-b border-gray-400 my-1'>{word}</li>
-              ))
-            }
-          </ul>
+          <div className=''>
+            <ul className='text-black font-light w-1/3 flex-wrap px-5'>
+              {
+                correctGuesses?.map((word, i) => (
+                  <li key={i} className='border-b border-gray-400 my-1'>{word}</li>
+                ))
+              }
+            </ul>
+          </div>
         }
       </div>
     </div>

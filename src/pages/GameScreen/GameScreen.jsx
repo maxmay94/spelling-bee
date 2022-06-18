@@ -117,6 +117,6 @@ function validWord(arr, center, starters) {
     }
     wordValid && newList.push(word)
   })
-  // console.log(arr[0].length, newList)
+  console.log(arr[0].length, newList)
   return newList
 } 
