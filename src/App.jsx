@@ -23,7 +23,7 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div className='bg-yellow-300 h-screen w-screen'>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<GameScreen user={user} />} />
