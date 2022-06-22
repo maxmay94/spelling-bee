@@ -11,6 +11,14 @@ import { wordList_9 } from '../../data/9-letters'
 import PlayArea from '../../components/PlayArea/PlayArea'
 import StatsAndScore from '../../components/StatsAndScore/StatsAndScore'
 
+import right from '../../Audio/right.wav'
+import wrong from '../../Audio/wrong.wav'
+
+const rightSound = new Audio(right)
+const wrongSound = new Audio(wrong)
+
+
+
 const GameScreen = (props) => {
   let [starters, setStarters] = useState([])
   let [center, setCenter] = useState('')
@@ -59,12 +67,15 @@ const GameScreen = (props) => {
       if(guess.length === 4 && !correctGuesses.includes(guess)) {
         setScore(score + 1)
         setCorrectGuesses([...correctGuesses, guess])
+        rightSound.play()
       } else if(!correctGuesses.includes(guess)) {
         setScore(score + guess.length)
         setCorrectGuesses([...correctGuesses, guess])
+        rightSound.play()
       }
     } else {
       console.log('Word Not Found....')
+      wrongSound.play()
     }
     setGuess('')
   }
