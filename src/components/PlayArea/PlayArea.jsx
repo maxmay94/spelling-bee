@@ -6,7 +6,7 @@ import InputBox from '../InputBox/InputBox'
 const PlayArea = ({starters, center, guess, setGuess, handleSubmit, handleShuffle}) => {
 
   return (
-    <div className='mx-auto mt-5 w-3/4 h-full bg-white/[0.3] drop-shadow-xl'>
+    <div className='mx-auto mt-5 px-3 lg:w-3/4 h-full bg-white/[0.3] drop-shadow-xl'>
       <div className=' w-full h-full'>
         <div className=''>
 
@@ -16,7 +16,7 @@ const PlayArea = ({starters, center, guess, setGuess, handleSubmit, handleShuffl
             </div>
           </div>
   
-          <div className='grid grid-cols-3 grid-rows-5 gap-0 w-72 h-64 min-w-1/4 min-h-1/3 mx-auto p-4'>
+          <div className='grid grid-cols-3 grid-rows-5 gap-0 w-72 h-64 lg:min-w-1/4 lg:min-h-1/3 mx-auto p-4'>
 
             <div>
               {/* spacer */}
@@ -84,21 +84,21 @@ const PlayArea = ({starters, center, guess, setGuess, handleSubmit, handleShuffl
           </div>
         </div>
 
-        <div className='flex mx-auto mt-5 pt-10 px-10 pb-5 w-3/4'>
+        <div className='flex mx-auto mt-5 pt-10 lg:px-10 pb-5 lg:w-3/4'>
           <button 
-            className='flex-1 bg-gray-100 hover:bg-gray-200 rounded-3xl text-black p-3 px-5'
+            className='flex-1 bg-gray-100 hover:bg-gray-200 rounded-3xl text-black p-3 lg:px-5'
             onClick={() => setGuess(guess.substring(0, guess.length - 1))}
             >
             delete
           </button>
           <button 
-            className='flex-1 mx-10 bg-gray-100 hover:bg-gray-200 rounded-3xl text-black p-3 px-5'
+            className='flex-1 mx-10 bg-gray-100 hover:bg-gray-200 rounded-3xl text-black p-3 lg:px-5'
             onClick={() => handleShuffle()}
           >
             ↺
           </button>
           <button 
-            className='flex-1 bg-gray-100 hover:bg-gray-200 rounded-3xl text-black p-3 px-5'
+            className='flex-1 bg-gray-100 hover:bg-gray-200 rounded-3xl text-black p-3 lg:px-5'
             onClick={() => handleSubmit()}
           >
             submit

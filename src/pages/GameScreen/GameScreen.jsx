@@ -76,8 +76,8 @@ const GameScreen = (props) => {
   return (
     <div className='bg-yellow-300 h-screen w-screen'>
       <h1 className='font-thin text-6xl text-center p-5 text-yellow-600 underline underline-offset-1 decoration-dotted decoration-black decoration-2'>spelling bee</h1>
-      <div className='flex'>
-        <div className='flex-1 pl-20'>
+      <div className='lg:flex'>
+        <div className='lg:flex-1 lg:pl-20'>
           <PlayArea 
             starters={starters} 
             center={center}  
@@ -87,7 +87,7 @@ const GameScreen = (props) => {
             handleShuffle={handleShuffle}
           />
         </div>
-        <div className='flex-1'>
+        <div className='lg:flex-1'>
           <StatsAndScore 
             score={score}
             totalWords={totalWords}
