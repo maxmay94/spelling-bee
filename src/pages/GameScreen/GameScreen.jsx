@@ -13,11 +13,8 @@ import StatsAndScore from '../../components/StatsAndScore/StatsAndScore'
 
 import right from '../../Audio/right.wav'
 import wrong from '../../Audio/wrong.wav'
-
 const rightSound = new Audio(right)
 const wrongSound = new Audio(wrong)
-
-
 
 const GameScreen = (props) => {
   let [starters, setStarters] = useState([])
@@ -98,7 +95,7 @@ const GameScreen = (props) => {
             handleShuffle={handleShuffle}
           />
         </div>
-        <div className='lg:flex-1'>
+        <div className='lg:flex-1 lg:pr-20'>
           <StatsAndScore 
             score={score}
             totalWords={totalWords}

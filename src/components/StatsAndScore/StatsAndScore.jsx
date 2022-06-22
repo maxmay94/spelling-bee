@@ -1,7 +1,6 @@
 import React from 'react'
 
 const StatsAndScore = ({score, totalWords, correctGuesses}) => {
-
   return (
     <div className='mx-auto mt-5 lg:w-3/4 h-full bg-white/[0.3] drop-shadow-xl'>
       <div className=' flex'>
