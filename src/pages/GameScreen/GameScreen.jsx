@@ -49,7 +49,7 @@ const GameScreen = (props) => {
     setWords_7(validWord(wordList_7, center, starters))
     setWords_8(validWord(wordList_8, center, starters))
     setWords_9(validWord(wordList_9, center, starters))
-    setWords_9(validWord(wordList_10, center, starters))
+    setWords_10(validWord(wordList_10, center, starters))
   }, [center, starters])
 
   useEffect(() => {
@@ -65,7 +65,7 @@ const GameScreen = (props) => {
   },[words_4, words_5, words_6, words_7, words_8, words_9, words_10])
 
   const handleSubmit = () => {
-    if(eval('words_' + guess.length).includes(guess)) {
+    if(guess.length > 3 && guess.length < 11 && eval('words_' + guess.length).includes(guess)) {
       if(guess.length === 4 && !correctGuesses.includes(guess)) {
         setScore(score + 1)
         setCorrectGuesses([...correctGuesses, guess])
