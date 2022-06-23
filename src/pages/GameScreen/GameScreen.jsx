@@ -73,7 +73,7 @@ const GameScreen = (props) => {
   },[words_4, words_5, words_6, words_7, words_8, words_9, words_10, words_11, words_12])
 
   const handleSubmit = () => {
-    if(guess.length > 3 && guess.length < 11 && eval('words_' + guess.length).includes(guess)) {
+    if(guess.length > 3 && guess.length <= 12 && eval('words_' + guess.length).includes(guess)) {
       if(guess.length === 4 && !correctGuesses.includes(guess)) {
         setScore(score + 1)
         setCorrectGuesses([...correctGuesses, guess])
