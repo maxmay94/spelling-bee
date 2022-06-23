@@ -2,7 +2,7 @@ import React from 'react'
 
 const StatsAndScore = ({score, totalWords, correctGuesses}) => {
   return (
-    <div className='mx-auto mt-5 lg:w-3/4 h-full bg-white drop-shadow-xl'>
+    <div className='mx-auto mt-5 lg:w-3/4 h-full bg-gray-100 drop-shadow-xl'>
       <div className=' flex'>
         <p className='flex-1 text-center p-3 text-black'>Score: {score}</p>
         <p className='flex-1 text-center p-3 mr-5 text-black'>{correctGuesses.length} / {totalWords} total words</p>
