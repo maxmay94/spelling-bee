@@ -8,6 +8,8 @@ import { wordList_7 } from '../../data/7-letters'
 import { wordList_8 } from '../../data/8-letters'
 import { wordList_9 } from '../../data/9-letters'
 import { wordList_10 } from '../../data/10-letters'
+import { wordList_11 } from '../../data/11-letters'
+import { wordList_12 } from '../../data/12-letters'
 
 
 import PlayArea from '../../components/PlayArea/PlayArea'
@@ -32,6 +34,8 @@ const GameScreen = (props) => {
   let [words_8, setWords_8] = useState([])
   let [words_9, setWords_9] = useState([])
   let [words_10, setWords_10] = useState([])
+  let [words_11, setWords_11] = useState([])
+  let [words_12, setWords_12] = useState([])
 
 
   useEffect(() => {
@@ -50,6 +54,8 @@ const GameScreen = (props) => {
     setWords_8(validWord(wordList_8, center, starters))
     setWords_9(validWord(wordList_9, center, starters))
     setWords_10(validWord(wordList_10, center, starters))
+    setWords_11(validWord(wordList_11, center, starters))
+    setWords_12(validWord(wordList_12, center, starters))
   }, [center, starters])
 
   useEffect(() => {
@@ -61,8 +67,10 @@ const GameScreen = (props) => {
       + words_8.length
       + words_9.length
       + words_10.length
+      + words_11.length
+      + words_12.length
     )
-  },[words_4, words_5, words_6, words_7, words_8, words_9, words_10])
+  },[words_4, words_5, words_6, words_7, words_8, words_9, words_10, words_11, words_12])
 
   const handleSubmit = () => {
     if(guess.length > 3 && guess.length < 11 && eval('words_' + guess.length).includes(guess)) {
